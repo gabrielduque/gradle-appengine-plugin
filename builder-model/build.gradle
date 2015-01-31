@@ -2,11 +2,11 @@ apply plugin: 'maven'
 apply plugin: 'java'
 apply plugin: 'nexus'
 
-apply from: '../java6-mode.gradle'
+apply from: '../java8-mode.gradle'
 
 archivesBaseName = 'gradle-appengine-builder-model'
 group = 'com.google.appengine'
-version = '0.1.0'
+version = '0.1.1'
 
 setJava6Mode(compileJava)
 
@@ -26,7 +26,7 @@ modifyPom {
         name 'Gradle App Engine tooling model'
         description 'Tooling model for Gradle App Engine plugin'
         url 'https://github.com/GoogleCloudPlatform/gradle-appengine-plugin'
-        inceptionYear '2014'
+        inceptionYear '2015'
 
         licenses {
             license {
