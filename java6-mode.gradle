@@ -3,11 +3,11 @@
 // compatibility libraries for the task, otherwise gradle throws a warning
 
 ext.setJava6Mode = { compileJavaTask ->
-    compileJavaTask.sourceCompatibility = 1.6
-    compileJavaTask.targetCompatibility = 1.6
+    compileJavaTask.sourceCompatibility = 1.8
+    compileJavaTask.targetCompatibility = 1.8
     // if jdk6.home is defined use it
-    def jdk6Home = System.properties['jdk6.home']
+    def jdk6Home = System.properties['jdk8.home']
     if(jdk6Home) {
-        compileJavaTask.options.bootClasspath = (new File(jdk6Home,"/jre/lib/rt.jar")).canonicalPath
+        compileJavaTask.options.bootClasspath = (new File(jdk8Home,"/jre/lib/rt.jar")).canonicalPath
     }
 }
