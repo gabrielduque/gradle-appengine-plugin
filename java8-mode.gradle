@@ -1,13 +1,13 @@
-// Allows a compileJavaTask to run in Java6 mode.
-// Setting the system property "jdk6.home" to a JDK6 installation links the
+// Allows a compileJavaTask to run in Java8 mode.
+// Setting the system property "jdk8.home" to a JDK8 installation links the
 // compatibility libraries for the task, otherwise gradle throws a warning
 
-ext.setJava6Mode = { compileJavaTask ->
+ext.setJava8Mode = { compileJavaTask ->
     compileJavaTask.sourceCompatibility = 1.8
     compileJavaTask.targetCompatibility = 1.8
-    // if jdk6.home is defined use it
-    def jdk6Home = System.properties['jdk8.home']
-    if(jdk6Home) {
+    // if jdk8.home is defined use it
+    def jdk8Home = System.properties['jdk8.home']
+    if(jdk8Home) {
         compileJavaTask.options.bootClasspath = (new File(jdk8Home,"/jre/lib/rt.jar")).canonicalPath
     }
 }
